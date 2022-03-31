@@ -1,0 +1,29 @@
+service: laboratorio-java-aws-lambda
+
+frameworkVersion: "3.7.1"
+
+custom:
+  myvariable: ${env:myVariable, 'pailas'}
+
+provider:
+  name: aws
+  runtime: java8
+  lambdaHashingVersion: '20201221'
+
+package:
+  individually: true
+
+functions:
+  api:
+    handler: com.neoris.laboratorioJavaAwsLambda.StreamLambdaHandler::handleRequest
+    package:
+      artifact: target/laboratorioJavaAwsLambda-0.0.1-SNAPSHOT-aws.jar
+    environment:
+      variable: ${self:custom.myvariable}
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: ANY
