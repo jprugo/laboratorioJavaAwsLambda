@@ -1,4 +1,4 @@
-service: laboratorio-java-aws-lambda
+service: laboratorio-java-aws-lambda-neoris
 
 frameworkVersion: "3.7.1"
 

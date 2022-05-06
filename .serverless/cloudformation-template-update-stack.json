@@ -74,7 +74,7 @@
     "ApiLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/laboratorio-java-aws-lambda-dev-api"
+        "LogGroupName": "/aws/lambda/laboratorio-java-aws-lambda-neoris-dev-api"
       }
     },
     "IamRoleLambdaExecution": {
@@ -102,7 +102,7 @@
               "Fn::Join": [
                 "-",
                 [
-                  "laboratorio-java-aws-lambda",
+                  "laboratorio-java-aws-lambda-neoris",
                   "dev",
                   "lambda"
                 ]
@@ -119,7 +119,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/laboratorio-java-aws-lambda-dev*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/laboratorio-java-aws-lambda-neoris-dev*:*"
                     }
                   ]
                 },
@@ -130,7 +130,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/laboratorio-java-aws-lambda-dev*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/laboratorio-java-aws-lambda-neoris-dev*:*:*"
                     }
                   ]
                 }
@@ -143,7 +143,7 @@
           "Fn::Join": [
             "-",
             [
-              "laboratorio-java-aws-lambda",
+              "laboratorio-java-aws-lambda-neoris",
               "dev",
               {
                 "Ref": "AWS::Region"
@@ -161,11 +161,11 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/laboratorio-java-aws-lambda/dev/1648740323515-2022-03-31T15:25:23.515Z/target/laboratorioJavaAwsLambda-0.0.1-SNAPSHOT-aws.jar"
+          "S3Key": "serverless/laboratorio-java-aws-lambda-neoris/dev/1651855590142-2022-05-06T16:46:30.142Z/target/laboratorioJavaAwsLambda-0.0.1-SNAPSHOT-aws.jar"
         },
         "Handler": "com.neoris.laboratorioJavaAwsLambda.StreamLambdaHandler::handleRequest",
         "Runtime": "java8",
-        "FunctionName": "laboratorio-java-aws-lambda-dev-api",
+        "FunctionName": "laboratorio-java-aws-lambda-neoris-dev-api",
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
@@ -184,7 +184,7 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersionRvY9nNA9PnzjWgXw5MpEF0BtcVNUq4rWVXPzoaYeyIw": {
+    "ApiLambdaVersionpCytZ6g4ybiBpQnnmkRaQJr9WAoaf818QSsRTlgKY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
@@ -197,7 +197,7 @@
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
-        "Name": "dev-laboratorio-java-aws-lambda",
+        "Name": "dev-laboratorio-java-aws-lambda-neoris",
         "EndpointConfiguration": {
           "Types": [
             "EDGE"
@@ -316,7 +316,7 @@
         "ApiLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1648740322704": {
+    "ApiGatewayDeployment1651855588938": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -373,16 +373,16 @@
         "Ref": "ServerlessDeploymentBucket"
       },
       "Export": {
-        "Name": "sls-laboratorio-java-aws-lambda-dev-ServerlessDeploymentBucketName"
+        "Name": "sls-laboratorio-java-aws-lambda-neoris-dev-ServerlessDeploymentBucketName"
       }
     },
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionRvY9nNA9PnzjWgXw5MpEF0BtcVNUq4rWVXPzoaYeyIw"
+        "Ref": "ApiLambdaVersionpCytZ6g4ybiBpQnnmkRaQJr9WAoaf818QSsRTlgKY"
       },
       "Export": {
-        "Name": "sls-laboratorio-java-aws-lambda-dev-ApiLambdaFunctionQualifiedArn"
+        "Name": "sls-laboratorio-java-aws-lambda-neoris-dev-ApiLambdaFunctionQualifiedArn"
       }
     },
     "ServiceEndpoint": {
@@ -408,7 +408,7 @@
         ]
       },
       "Export": {
-        "Name": "sls-laboratorio-java-aws-lambda-dev-ServiceEndpoint"
+        "Name": "sls-laboratorio-java-aws-lambda-neoris-dev-ServiceEndpoint"
       }
     }
   }
